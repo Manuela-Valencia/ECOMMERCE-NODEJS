@@ -127,7 +127,7 @@ test("POST -> 'URL_BASE/:id/images', should return status code 200 and res.body.
     .post(`${URL_BASE}/${productId}/images`)
     .send([image.id])
     .set("Authorization", `Bearer ${TOKEN}`)
-console.log(res.body);
+
   expect(res.status).toBe(200)
   expect(res.body).toBeDefined()
   expect(res.body).toHaveLength(1)

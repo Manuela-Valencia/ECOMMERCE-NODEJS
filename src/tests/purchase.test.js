@@ -19,8 +19,8 @@ beforeAll(async () => {
 
   //INICIO SESION 
   const user = {
-    email: "sergio@gmail.com",
-    password: "sergio1234"
+      email: "manu10@gmail.com",
+      password: "manu1234"
   }
   const res = await request(app)
     .post(`${URL_BASE_USERS}/login`)
@@ -50,13 +50,12 @@ beforeAll(async () => {
 
 //POST
 test("POST 'URL_BASE', should return status code 201 and res.body.quantity ===bodyCart.quantity", async () => {
-  const res = await request(app)
+    const res = await request(app)
     .post(URL_BASE)
     .set("Authorization", `Bearer ${TOKEN}`)
 
   expect(res.status).toBe(201)
   expect(res.body[0].quantity).toBe(bodyCart.quantity)
-
 })
 
 //GET
